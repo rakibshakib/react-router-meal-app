@@ -6,6 +6,8 @@ import {
   Route
 } from "react-router-dom";
 import NotFound from './components/Header/NotFound/NotFound';
+import FoodData from './components/FoodData/FoodData';
+import MealDetails from './components/MealDetails/MealDetails';
 
 function App() {
   return (
@@ -14,10 +16,15 @@ function App() {
         <Header />
         <Switch>
           <Route path='/home'>
-
-
+            <FoodData />
           </Route>
-          <Route path='/*'>
+          <Route exact path='/'>
+            <FoodData />
+          </Route>
+          <Route path='/mealdetails/:idMeal'>
+            <MealDetails />
+          </Route>
+          <Route path='*'>
             <NotFound />
 
           </Route>
